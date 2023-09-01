@@ -17,7 +17,6 @@ if (isset($_SESSION['username'])) {
    <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu pull-right">
            <?php if(isset($_SESSION['username'])){
-               echo "<li><a href='./login/reset_pass.php'>Izmeni Lozinku</a></li>";
                if(isset($_SESSION['adm']) && $_SESSION['adm']=='Yes'){
                    echo "
                    <li><a href='users_admin.php'>Korisnički nalozi</a></li>

@@ -43,6 +43,7 @@ if(isset($_GET['id'])){
 <?php
 if (isset($_SESSION['msg_send'])){
     echo '<script>alert("Poruka uspešno poslana");</script>';
+    unset($_SESSION['msg_send']);
 }
 ?>
 

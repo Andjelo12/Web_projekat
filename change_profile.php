@@ -102,6 +102,11 @@ if(isset($_POST['id']) && isset($_POST['firstname']) && isset($_POST['lastname']
                         <input type="submit" class="btn btn-primary" value="sačuvaj promene">
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-4">
+                        <a href="change_pass.php">Izmeni lozinku</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

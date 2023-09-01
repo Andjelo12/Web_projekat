@@ -83,6 +83,10 @@ if($query2->rowCount() > 0){
         }
     }
 }
+if(isset($_SESSION['change_pass'])) {
+    echo "<script>alert('Link za promenu lozinke ja poslat na Vaš e-mail')</script>";
+    unset($_SESSION['change_pass']);
+}
 if(isset($_SESSION['login_ch'])) {
     echo "<script>alert('Lozinka uspesno izmenjena!')</script>";
     unset($_SESSION['login_ch']);

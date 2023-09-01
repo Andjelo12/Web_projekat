@@ -297,3 +297,19 @@ function setForgottenToken(PDO $pdo, string $email, string $token): void
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 }
+
+/**
+ * Function sets the change password token
+ * @param PDO $pdo
+ * @param string $email
+ * @param string $token
+ * @return void
+ */
+function setChangeToken(PDO $pdo, string $email, string $token): void
+{
+    $sql = "UPDATE users SET change_password_token = :token, change_password_expires = DATE_ADD(now(),INTERVAL 6 HOUR) WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':token', $token, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+}

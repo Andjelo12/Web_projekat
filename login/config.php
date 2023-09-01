@@ -49,5 +49,9 @@ $emailMessages = [
     'forget' => [
         'subject' => 'Forgotten password - create new password',
         'altBody' => 'This is the body in plain text for non-HTML mail clients'
+    ],
+    'change' => [
+        'subject' => 'Change password - create new password',
+        'altBody' => 'This is the body in plain text for non-HTML mail clients'
     ]
 ];

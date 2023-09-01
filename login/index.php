@@ -198,7 +198,7 @@ require_once 'config.php';
                 hideErrorMessage(regEmail);
             }
         }
-        xmlhttp.open("POST", "emailLiveProvera.php");
+        xmlhttp.open("POST", "emailLiveCheck.php");
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("x=" + dbParam);
     }

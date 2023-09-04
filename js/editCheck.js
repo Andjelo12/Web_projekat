@@ -17,7 +17,7 @@ function init() {
             showErrorMessage(loCation, "Molimo popunite polje lokacija");
             isValid = false;
         } else if (!isValidLoaction(loCation.value.trim())) {
-            showErrorMessage(loCation, "Unos mora da bude u formatu gread, naselje");
+            showErrorMessage(loCation, "Unos mora da bude u formatu naselje,\u2423ulica");
             isValid = false;
         } else {
             hideErrorMessage(loCation);
@@ -49,7 +49,7 @@ function init() {
 }
 const isEmpty = value => value === '';
 const isValidLoaction = (location) => {
-    let rex = /\w+, \w*/g;
+    let rex = /\w*\S,\s\S\w*/g;
     let pattern = location.match(rex);
     if(pattern!=null){
         if(pattern.length==1) {

@@ -84,7 +84,10 @@ if (isset($_SESSION['msg_send'])){
                                 ?>
                             </ul>
                             <li style="width: 150px"><a href="answer.php?id_estate=<?php echo $result->id_estate; ?>&email_receiver=<?php echo $result->email_sender; ?>&id_message=<?php echo $result->id_message; ?>" class="btn">Odgovori</a></li>
-                            <li style="width: 240px"><a href="read.php?id_message=<?php echo $result->id_message; ?>" class="btn" style="background-color: #080;">Označi kao pročitano</a></li>
+                            <?php
+                            if($result->seen=='No')
+                                echo "<li style='width: 240px'><a href='read.php?id_message=<?php echo $result->id_message; ?>' class='btn' style='background-color: #080;'>Označi kao pročitano</a></li>";
+                            ?>
                             <li style="width: 150px"><button onclick="confirmFnc(<?php echo $result->id_message; ?>)" class="btn" style="background-color: #f00">Obriši</button></li>
                         </div>
                     </div>

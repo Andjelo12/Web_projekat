@@ -46,7 +46,7 @@ include('includes/config.php');
     <div class="form-group">
         <label class="col-sm-4 control-label" for="location">Lokacija</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control white_bg" id="location" name="location" placeholder="grad,&#9251;naselje">
+            <input type="text" class="form-control white_bg" id="location" name="location" placeholder="naselje,&#9251;adresa">
             <small></small>
         </div>
     </div>

@@ -66,7 +66,7 @@ $results=$query->fetchAll(PDO::FETCH_OBJ);
                         $query3->execute();
                         $results3=$query3->fetchAll(PDO::FETCH_OBJ);
                         if($results[0]->status!="slobodno" || $results3[0]->email==$_SESSION["username"]) {
-                            echo '<a href="" class="btn" style="background-color:#f00">Izaberite drugu nekretninu</span></a>';
+                            echo '<a href="index.php" class="btn" style="background-color:#f00">Izaberite drugu nekretninu</span></a>';
                         }else{
                             echo '<a href="contact_user.php?id='.$id.'" class="btn">Kontaktiraj korisnika</span></a>';
                         }

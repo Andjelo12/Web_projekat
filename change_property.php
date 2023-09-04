@@ -69,7 +69,7 @@ if(isset($_GET['id'])) {
     <div class="form-group">
         <label class="col-sm-4 control-label" for="location">Lokacija</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="location" name="location" placeholder="grad,&#9251;naselje" value="<?php echo $location ?>">
+            <input type="text" class="form-control" id="location" name="location" placeholder="naselje,&#9251;adresa" value="<?php echo $location ?>">
             <small></small>
         </div>
     </div>

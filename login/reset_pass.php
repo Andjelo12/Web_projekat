@@ -1,12 +1,6 @@
 <?php
 require_once 'config.php';
 session_start();
-if (isset($_SESSION['username'])) {
-    $user = $_SESSION['username'];
-}
-else{
-    header("Location: ./index.php");
-}
 if (isset($_GET['token'])) {
     $token = trim($_GET['token']);
 }
@@ -62,7 +56,6 @@ if (isset($_GET['token'])) {
 
                 <div class="pt-3">
                     <input type="hidden" name="action" value="resetPassword">
-                    <input type="hidden" name="resetEmail" value="<?php echo $user ?>">
                     <input type="hidden" name="token" value="<?php echo $token ?>">
                     <button type="submit" class="btn btn-primary">Send</button>
                     <button type="reset" class="btn btn-primary resetButton">Cancel</button>

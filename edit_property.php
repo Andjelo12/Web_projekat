@@ -16,10 +16,18 @@ if($_FILES['img']['tmp_name']!=null)
     if($query2->rowCount() > 0)
     {
         $_SESSION['message_change'] = 'Nekretnina uspesno izmenjena!';
-        header("Location: list_estates.php");
+        if(isset($_SESSION['adm']) && $_SESSION['adm']=='Yes') {
+            header("Location: list_estates_admin.php");
+        }else {
+            header("Location: list_estates.php");
+        }
     }
-    else{
-        header("Location: list_estates.php");
+    else {
+        if (isset($_SESSION['adm']) && $_SESSION['adm'] == 'Yes') {
+            header("Location: list_estates_admin.php");
+        } else {
+            header("Location: list_estates.php");
+        }
     }
 }
 $query->bindParam(':description',$_POST["details"], PDO::PARAM_STR);
@@ -37,7 +45,11 @@ if($query->rowCount() > 0)
     else
         header("Location: list_estates.php");
 }
-else{
-    header("Location: list_estates.php");
+else {
+    if (isset($_SESSION['adm']) && $_SESSION['adm'] == 'Yes') {
+        header("Location: list_estates_admin.php");
+    } else {
+        header("Location: list_estates.php");
+    }
 }
 ?>

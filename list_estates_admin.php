@@ -81,7 +81,7 @@ if($_SESSION['adm']!="Yes")
                                 </ul>
                                 <a href="details.php?id=<?php echo htmlentities($result->id_estate);?>" class="btn">Detaljnije...<span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
                                 <a href="change_property.php?id=<?php echo htmlentities($result->id_estate);?>" class="btn">Izmeni</a>
-                                <a href="delete_estate.php?id=<?php echo htmlentities($result->id_estate);?>" class="btn">Obriši</a>
+                                <button onclick="confirmFncEstate(<?php echo $result->id_estate; ?>)" class="btn" style="background-color: #f00">Obriši</button>
 
                                 <?php
                                 if($result->approved=="No"){
@@ -121,6 +121,13 @@ if($_SESSION['adm']!="Yes")
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
 <!--/Back to top-->
 
+<script>
+    function confirmFncEstate(id){
+        if(confirm('Da li stvarno želite da obrišete nekretninu?')){
+            location.href='delete_estate.php?id='+id;
+        }
+    }
+</script>
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>

@@ -87,7 +87,7 @@ include('includes/config.php');
                                 }
                                 ?>
                                 <a href="change_property.php?id=<?php echo htmlentities($result->id_estate);?>" class="btn">Izmeni</a>
-                                <a href="delete_estate.php?id=<?php echo htmlentities($result->id_estate);?>" class="btn">Obriši</a>
+                                    <button onclick="confirmFncEstate(<?php echo $result->id_estate; ?>)" class="btn" style="background-color: #f00">Obriši</button>
                                     <?php } else {
                                 echo '
                                 <a href="" class="btn" style="background-color: #f00">Nekretnina još uvek nije odobrena</a>
@@ -125,6 +125,13 @@ include('includes/config.php');
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
 <!--/Back to top-->
 
+<script>
+    function confirmFncEstate(id){
+        if(confirm('Da li stvarno želite da obrišete nekretninu?')){
+            location.href='delete_estate.php?id='+id;
+        }
+    }
+</script>
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
